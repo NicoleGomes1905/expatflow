@@ -1,0 +1,40 @@
+.app-header {
+  display: flex;
+  align-items: flex-start;
+  background-color: #242b3a;
+  padding: 15px;
+  color: white;
+  border-bottom: 1px solid #505966;
+}
+
+.app-header h1 {
+  padding-left: 10px;
+  font-size: 24px;
+}
+
+.app-content {
+  display: flex;
+  flex-direction: row;
+
+  background-color: #242b3a;
+  min-height: 100vh;
+}
+
+.first-section {
+  width: 50vw;
+}
+
+.timezone-content {
+  margin: 20px;
+  border-radius: 15px;
+}
+
+.second-section {
+  width: 50vw;
+}
+
+.exchange-content {
+  margin: 20px;
+  border-radius: 15px;
+  background-color: #1E222D;
+}

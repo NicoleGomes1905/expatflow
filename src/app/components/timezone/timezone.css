@@ -1,0 +1,90 @@
+.timezone-container {
+  padding: 20px;
+}
+
+.timezone-container h2 {
+  font-weight: 600;
+  font-size: 20px;
+  color: white;
+}
+
+.timezone-list {
+  display: flex;
+  flex-direction: row;
+  padding-top: 20px;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.timezone-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  border-radius: 5px;
+  font-weight: 400;
+  color: white;
+}
+
+.timezone-item select {
+
+  background-color: transparent;
+  color: black;
+  border: none;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+
+.first-timezone {
+  background: linear-gradient(#3bbedf, #146cb4);
+}
+
+.second-timezone {
+  background: linear-gradient(#ff9966, #ff5e62);
+}
+
+.timezone-title {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.timezone-clock {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 3px solid white;
+}
+
+.clock-pointer {
+  position: absolute;
+  background: white;
+  width: 3px;
+  border-radius: 3px;
+  left: 50%;
+  margin-left: -1px;
+  bottom: 71%;
+  transform-origin: bottom center;
+}
+
+.clock-pointer.hour {
+  height: 30px;
+  background-color: #8b8a8a;
+}
+
+.clock-pointer.minute {
+  height: 45px;
+}
+
+.time-display {
+  padding-top: 50px;
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: 10px;
+}

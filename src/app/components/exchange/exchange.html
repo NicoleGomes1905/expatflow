@@ -1,0 +1,71 @@
+<div class="exchange-container">
+  <h2>Real-time Exchange Rates</h2>
+  <div class="exchange-item">
+    <div class="exchange-multiselect">
+        <div class="exchange-from-to from">
+          <label for="from">From</label>
+          <select [(ngModel)]="selectedFrom" (ngModelChange)="returnExchangeRange(); returnHistoryExchangeRate()">
+            @for (coin of exchangeCoins(); track coin) {
+              <option value="{{coin}}">{{coin}}</option> 
+            }
+          </select>
+        </div>
+        <div class="exchange-from-to to">
+          <label for="to">To</label>
+          <select [(ngModel)]="selectedTo" (ngModelChange)="returnExchangeRange(); returnHistoryExchangeRate()">
+            @for (coin of exchangeCoins(); track coin) {
+              <option value="{{coin}}">{{coin}}</option> 
+            }
+          </select>
+        </div>
+    </div>
+    <div class="exchange-display">
+      @if (pairFound()) {
+        <span>1 {{selectedFrom()}} = {{finalValue()}} {{selectedTo()}}</span>
+      }
+      @else {
+        <span>{{finalValue()}}</span>
+      }
+    </div>
+    <div class="exchange-chart" >
+      @if (!pairFound()) {
+        <span class="exchange-chart-error">Select a valid pair to display the chart!</span>
+      }
+      @else {
+        <apx-chart class="apex-chart"
+          [series]="series()"
+          [xaxis]="xAxis()"
+          [yaxis]="chartOptions.yaxis"
+          [chart]="chartOptions.chart"
+          [stroke]="chartOptions.stroke"
+          [colors]="chartOptions.colors"
+          [fill]="chartOptions.fill"
+          [tooltip]="chartOptions.tooltip"
+        >
+        </apx-chart>
+      }
+    </div>
+    <div class="exchange-comparison">
+      <div class="item-comparison">
+        <div class="comparison-header">
+          <p>EUR/USD</p>
+          <img [src]="iconArrowEurUsd()" alt="Comparison Icon" class="comparison-icon" />
+        </div>
+        <span>1 EUR = {{comparisonValue()}} USD</span>
+      </div>
+      <div class="item-comparison">
+        @if (pairFound()) {
+          <div class="comparison-header">
+            <p>{{selectedFrom()}}/{{selectedTo()}}</p>
+            <img [src]="iconArrow()" alt="Comparison Icon" class="comparison-icon" />
+          </div>
+          <span>1 {{selectedFrom()}} = {{finalValue()}} {{selectedTo()}}</span>
+        } 
+        @else {
+          <span>No exchange rate available</span>
+        }
+      </div>
+
+    </div>
+</div>
+

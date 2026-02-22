@@ -1,9 +1,12 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { Timezone } from './components/timezone/timezone';
+import { Exchange } from './components/exchange/exchange';
+
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, Timezone, Exchange],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
